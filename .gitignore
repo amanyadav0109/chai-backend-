@@ -42,6 +42,12 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Package lock file (optional, you said you don’t want it)
+package-lock.json
+
+# Ignore public folder
+public/
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
