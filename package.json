@@ -1,0 +1,16 @@
+{
+  "name": "data-modelling",
+  "version": "1.0.0",
+  "description": "a backend data  modelling",
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "Aman Yadav",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
