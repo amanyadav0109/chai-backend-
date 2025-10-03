@@ -1,13 +1,13 @@
 //this is wrappper function to handle the async errors
 
 // 1-this is promise approach
-const asyncHadler=(requesthandler)=>{
-    (req,res,next)=>{
+const asyncHandler=(requesthandler)=>{
+   return (req,res,next)=>{
         Promise.resolve(requesthandler(req,res,next)).catch((err) => next(err))
     }
 }
 
-export {asyncHadler}
+export {asyncHandler}
 
 
 //2-this is try catech block approach

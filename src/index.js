@@ -1,4 +1,4 @@
-
+import {app} from "./app.js";
 import connectDB from "./db/index.js";
 import dotenv from "dotenv";
 dotenv.config({
@@ -6,10 +6,7 @@ dotenv.config({
 })
 
 connectDB()
-app.on("error",(error)=>{
-    console.error("Failed to connect to the database",error);
-    throw error
-})
+
 .then(()=>{
     app.listen(process.env.PORT ||8000,()=>{
         console.log(`Server is running on port ${process.env.PORT ||8000}`);
@@ -18,6 +15,11 @@ app.on("error",(error)=>{
 .catch((error)=>{
     console.log("Error connecting to the database", error);
     
+})
+// App-level runtime errors (not DB errors)
+app.on("error",(error)=>{
+    console.error("Failed to connect to the database",error);
+    throw error
 })
 
 

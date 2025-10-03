@@ -48,6 +48,7 @@ const userSchema=new Schema(
      },
      {timestamps:true}
 )
+// pre is middleware topic
 userSchema.pre("save",async function(next){
     if(!this.isModified("password")) return next()
         
