@@ -19,14 +19,8 @@ const uploadOncloudinary=async(localFilePath)=>{
              return response;
     } catch (error) {
         fs.unlinkSync(localFilePath) //remove the locally saved file as the upload operation  got faild
-
+       return null;
         
     }
 }
-cloudinary.v2.uploader
-.upload("dog.mp4", {
-  resource_type: "video", 
-  public_id: "my_dog",
-  overwrite: true, 
-  notification_url: "https://mysite.example.com/notify_endpoint"})
-.then(result=>console.log(result));
+export {uploadOncloudinary};
