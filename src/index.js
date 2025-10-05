@@ -23,10 +23,6 @@ app.on("error",(error)=>{
 })
 
 
-
-
-
-
 //this is affix  approach 1
 /*
 const app=express()
