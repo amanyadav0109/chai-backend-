@@ -25,7 +25,14 @@ router.route("/change-password").post(verifyJWT,changeCurrentPassword)
 router.route("/current-user").post(verifyJWT,getcurrentuser)
 router.route("/update-account").patch(verifyJWT,updateAccountDetail)
 router.route("/avatar").patch(verifyJWT,upload.single("avatar"),updateuserAvatar)
-router.route("/cover-Image").patch(verifyJWT,upload.single("/coverImage"),updateusercoverImage)
+router.route("/cover-Image").patch(verifyJWT,upload.single("coverImage"),updateusercoverImage)
 router.route("/c/:username").get(verifyJWT,getuserChannelProfile)
 router.route("/watch-history").get(verifyJWT,getwatchHistory)
 export default router;
+
+//method means
+//GET → Read data
+
+// POST → Create or perform action
+
+// PATCH → Update part of existing data
