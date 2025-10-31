@@ -215,8 +215,8 @@ const refreshAccessToken=asyncHandler(async(req,res)=>{
     const {accessToken,newrefreshToken}=await generateAccessandRefreshTokens(user._id)
    return res 
    .status(200)
-   .cookies("accessToken", accessToken,options)
-   .cookies("refreshToken", newrefreshToken,options)
+    .cookie("accessToken", accessToken, options)  
+      .cookie("refreshToken", newrefreshToken, options)  
    .json(
      new Apiresponse(
        200,
@@ -433,6 +433,7 @@ const getwatchHistory=asyncHandler(async(req,res)=>{
         pipeline:[
           {
             $lookup:{
+              from: "users",
               localField:"owner",
               foreignField:"_id",
               as:"owners",
