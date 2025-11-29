@@ -99,7 +99,6 @@ const registerUser = asyncHandler(async (req, res) => {
     .status(201)
     .json(new Apiresponse(200, createdUser, "User register successfully"));
 });
-
 const loginUser=asyncHandler(async(req,res)=>{
   //req.body->data
   //validation through username or email
@@ -229,7 +228,7 @@ const refreshAccessToken=asyncHandler(async(req,res)=>{
     throw new ApiErrors(401,error?.message || 
       "inavlid refresh token")
    }
-  })
+})
 const changeCurrentPassword=asyncHandler(async(req,res)=>{
     //get user from req
     //get old password & new password from req.body
@@ -256,7 +255,7 @@ const changeCurrentPassword=asyncHandler(async(req,res)=>{
         "Password changed successfully"
       )
      )
-  })
+})
 const getcurrentuser=asyncHandler(async(req,res)=>{
     return res
     .status(200)
@@ -267,7 +266,7 @@ const getcurrentuser=asyncHandler(async(req,res)=>{
         "Current user fetched successfully"
       )
     )
-  })
+})
 const updateAccountDetail=asyncHandler(async(req,res)=>{
   const{fullName,email}=req.body
   if(!fullName || !email){
@@ -469,7 +468,6 @@ const getwatchHistory=asyncHandler(async(req,res)=>{
     )
   )
 })
-
 export { 
   registerUser,
   loginUser,
