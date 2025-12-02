@@ -8,7 +8,7 @@ const createTweet=asyncHandler(async(req,res)=>{
 //check validation user
 //if user exist create tweet account
 //return response
-const userId=req.body._id
+const userId=req.user._id
 const {content}=req.body
 if(!content){
     throw new ApiErrors("content is required")
