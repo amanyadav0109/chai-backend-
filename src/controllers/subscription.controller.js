@@ -23,7 +23,7 @@ const toggleSubscription=asyncHandler(async(req,res)=>{
           .json(new Apiresponse(200, null, "Unsubscribed successfully") )
      }
    //subscribe
-   const newsub=await Subscriptions.create({
+   const newsubscription=await Subscriptions.create({
     channel: channelId,
     subscriber: subscriberId
    })
